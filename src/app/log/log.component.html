@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container bg-style">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <form class="box" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                        <h1>Login</h1>
+                        <p class="text-muted"> Please enter your login and password!</p> 
+                        <div class="form-group">
+                            <input type="text" id1="text" placeholder="User Name" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required />
+                            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+                                <div *ngIf="name.errors?.required"> User Name is required</div>
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <input type="password" id1="password" placeholder="Password" id="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required />
+                            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="invalid-feedback">
+                                <div *ngIf="password.errors?.required">Password is required</div>
+                            </div>
+                        </div>
+                        <a class="forgot text-muted" routerLink="/forgotpassword">Forgot password?</a>
+                        <div>
+                            <input type="submit" name="" value="Login123" class="btn btn-outline-dark btn-primary mt-3" routerLink="/dashboard"  [disabled]='!model.name || !model.password'>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                           New Register
+                          </button>  
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- model -->
+    <section>
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <h5 class="modal-title" id="staticBackdropLabel">Register form</h5>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">First Name</label>
+                    <input type="text" formControlName="firstName" class="form-control" id="exampleInputFullName" placeholder="Enter Full Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Last Name</label>
+                    <input type="text" formControlName="lastName" class="form-control" id="exampleInputFullName" aria-describedby="FullNameHelp" placeholder="Enter Full Name">
+                  </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email ID</label>
+                  <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Mobile Number</label>
+                    <input type="text" formControlName="mobile" class="form-control" id="exampleMobileNumber" aria-describedby="MobileNumber" placeholder="Mobile Number">
+                  </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Salary</label>
+                  <input type="text" formControlName="salary" class="form-control" id="exampleSalary" placeholder="Salary">
+                </div>
+                
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="postEmployeDetails()" class="btn btn-primary">submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </section>
+
+    
+</body>
+</html>
+

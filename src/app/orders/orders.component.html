@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- fontawesome link -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <title>Food Stuff</title>
+</head>
+
+<body>
+  
+  <!-- Main Navbar -->
+  <app-navbar></app-navbar>
+
+  <!-- orders Table -->
+  <section class="pt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md">
+          <div class="card-md">
+            <div class="card-header bg-primary text-white">
+              <h3>Order Details</h3>
+            </div>
+            <div class="card-body bg-light-blue " style="overflow-x:auto;">
+              <div class="scrollable tableFixHead">
+                <table class="table  table-hover text-center sticky">
+                  <thead class="bg-dark text-white">
+                    <tr>
+                      <th>OrderId</th>
+                      <th>OrderBy</th>
+                      <th>Details</th>
+                      <th>Address</th>
+                      <th class="driverHead" >Drivers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor='let item of orderDetailsData'>
+                      <td>{{item.orderid}}</td>
+                      <td>{{item.orderby}}</td>
+                      <td>{{item.details}}</td>
+                      <td>{{item.address}}</td>
+                      <td>
+                        <div>
+                          <div class="form-group input-group">
+                            <select class="form-control">
+                              <option value="">Select Driver</option>
+                              <option *ngFor="let driver of SelectDriverData">{{driver.driverName}}</option>
+                            </select>
+
+                            <span class="input-group-btn">
+                              <button type="button" class="btn btn-primary m-1">Asign</button>
+                              <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Cancel
+                              </button>
+                            </span>
+
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h4>{{errMsg}} </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- model section -->
+  <!-- cancle model -->
+  <section>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="mx-3">
+            <h5 class="modal-title" id="staticBackdropLabel">Reason</h5>
+          </div>
+          <div class="modal-body">
+            <div class="form-floating ">
+              <textarea class="form-control pt-1" style="height: 150px">delivary address wrong 
+              </textarea>
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

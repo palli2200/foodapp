@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-primary,
+.btn-primary {
+  background: linear-gradient(45deg, darkslategrey, rgb(101, 101, 228));
+}
+.bg-secondary,
+.btn-secondary {
+  background: linear-gradient(45deg, darkslategrey, purple);
+}
+.bg-success,
+.btn-success {
+  background: linear-gradient(45deg, darkslategrey, limegreen);
+}
+
+.bg-warning,
+.btn-warning {
+  background: linear-gradient(45deg, darkslategrey, coral);
+}
+
+.bg-danger,
+.btn-danger {
+  background: linear-gradient(45deg, darkslategrey, red);
+}
+
+.bg-teal,
+.btn-teal {
+  background-color: #008080;
+}
+
+.bg-light-blue {
+  background-color: rgb(220, 220, 247);
+}
+
+.bg-light-green {
+  background-color: rgb(208, 240, 208);
+}
+
+.bg-light-red {
+  background-color: rgb(243, 223, 223);
+}
+
+.p-image {
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+}
+.my-custom-scrollbar {
+  position: relative;
+
+  overflow: auto;
+}
+.table-wrapper-scroll-y {
+  display: block;
+}
+.card-alignment {
+  height: 195px !important;
+  width: 200px;
+}

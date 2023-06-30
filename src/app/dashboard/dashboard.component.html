@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Fontawesome link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">    
+</head>
+<body>
+  <!-- main navbar -->
+    <app-navbar></app-navbar>
+
+<!-- Button trigger modal -->
+<section class="pt-3 bg-light">
+    <div class="container">
+        <div class="row"> 
+            <div class="col-md-4">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Show Orders
+                </button>          
+            </div>
+         </div>
+    </div>
+</section>
+
+<!-- Modal -->
+  <div class="modal fade mt-25" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" style="margin-top: 55px" >
+        <div class="bg-primary text-white">
+          <div class="modal-header" >
+            <h5 class="modal-title" id="staticBackdropLabel">Order details</h5>
+          </div>
+
+        </div>
+        
+      
+<!-- date Picker Section -->
+<div>
+  <form class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        From: <input class="form-control " placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+          #d="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-primary calendar" (click)="d.toggle()" type="button"><i class="fa fa-calendar"
+            aria-hidden="true"></i>
+          </button>
+        </div>
+        To:<input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+          #d="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-primary calendar" (click)="d.toggle()" type="button"><i class="fa fa-calendar"
+              aria-hidden="true"></i>
+          </button>
+        </div>
+        <button type="button" class="btn btn-primary p-2">Go
+        </button>
+      </div>
+    </div>
+  </form>
+
+</div>
+<!-- show orders table model  -->
+<div class="card-body bg-light-blue" style="overflow-x:auto;">
+  <div class="modal_body table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table text-center table-bordered table-striped mb-0">
+      <thead>
+        <tr class="theadPosition text-white">
+          <th scope="col">orderId</th>
+          <th scope="col">Item</th>
+          <th scope="col">Status</th> 
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr *ngFor ='let item of ShowOrdersData'>
+          <td scope="row">{{item.id}}</td>
+          <td>{{item.itemType}}</td>
+          <td>{{item.status}} </td>
+        </tr>
+      </tbody>
+    </table>
+    {{errMsg}}
+  </div>
+</div>
+
+<div class="modal-footer  footer-hight bg-primary text-white">
+  <button type="button" class="btn btn-primary  closeButtonMargin" data-bs-dismiss="modal">Close</button>
+</div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

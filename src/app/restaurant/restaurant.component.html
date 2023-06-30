@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Fontawesome Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    
+</head>
+<body>
+ <!-- Main Navbar -->
+ <app-navbar></app-navbar>
+
+<!-- Restaurent Search -->
+<section class="bg-primary text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="container">
+                    <div class="row animated slideInLeft">
+                        <h1>
+                            <i class="fas fa-utensils"></i> Restaurants 
+                        </h1>   
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 p-1">
+                <form>
+                    <div class="input-group">
+                        <input type="search" class="form-control rounded m-1" placeholder="Search" aria-label="Search"
+                        aria-describedby="search-addon" />
+                        <button type="button" class="btn btn-primary bg-primary text-white m-1">search</button>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<div *ngIf='!showdetails'>
+    <div class="display" (click)='backToHome()'>
+        <p>home</p>><p>Category</p>
+    </div>
+     <!-- Main Content Section -->
+ <section class="pt-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card animated zoomIn delay-2s">
+                    <div class="card-header bg-primary text-white">
+                        <h3>Restaurants List<button type="button" class="btn btn-primary btn-block text-white mx-2" (click)="addRestrauntModal(mymodal)" > Add Restaurent <i class="fa fa-plus-circle"></i></button> </h3>
+                    </div>
+                    <div class="card-body bg-light-blue" style="overflow-x:auto;">
+                        <div (click)='child()' class="card" >
+                            <div class="card-header bg-light-blue">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <div class="col">
+                                       
+                                        <h6>
+                                           GrandKrishna
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div (click)='child()' class="card mt-4">
+                            <div class="card-header bg-light-blue">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <div class="col">
+                                        <h6> Madhura </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div (click)='child()' class="card mt-4">
+                            <div class="card-header bg-light-blue">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <div class="col">
+                                        <h6> Ambica </h6>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                        <div (click)='child()' class="card mt-4">
+                            <div class="card-header bg-light-blue">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <div class="col">
+                                        <h6> Novotel </h6>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                        <div (click)='child()' class="card mt-4">
+                            <div class="card-header bg-light-blue">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <i class="fas fa-utensils"></i> 
+                                    </div>
+                                    <div class="col">
+                                        <h6> Mandipaka </h6>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+
+
+
+
+<!-- modal -->
+<ng-template #mymodal let-modal>
+    <div class="modal-header bg-primary">
+      <h4 class="modal-title text-white" id="modal-basic-title ">{{title}}</h4>
+    </div>
+    <div class="modal-body">
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="name">Restaurant Name</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required />
+                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+                    <div *ngIf="name.errors?.required">Name is required</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="model.phoneNumber" #phoneNumber="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phoneNumber.invalid }" required />
+                <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)" class="invalid-feedback">
+                    <div *ngIf="phoneNumber.errors?.required">Phone Number is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="details">Location/Details</label>
+                <input type="text" id="details" class="form-control" name="details" [(ngModel)]="model.details" #details="ngModel" [ngClass]="{ 'is-invalid': f.submitted && details.invalid }" required />
+                <div *ngIf="details.invalid && (details.dirty || details.touched)" class="invalid-feedback">
+                    <div *ngIf="details.errors?.required">Details required</div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Cancel')">Cancel</button>
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save')" [disabled]='!model.name || !model.phoneNumber || !model.details'>Submit</button>
+    </div>
+  </ng-template>
+<app-restaurantdetails *ngIf='showdetails' (back)='back()'></app-restaurantdetails>
+</body>
+
+</html>
+
+<router-outlet></router-outlet>

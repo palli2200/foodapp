@@ -1,0 +1,180 @@
+<div *ngIf=showdetails>
+	<div class="display" (click)='backToHome()'>
+		<p>home</p>><p>Restaurant</p>
+	</div>
+	<section class="mt-3">
+		<div class="container">
+			<div class="card">
+				<div class="row">
+					<div class="col-md-4">
+						<div>
+
+							<div>
+								<img src="assets/restaurantpic.jpg" class="img-fluid img-thumbnail p-image">
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-8">
+						<div>
+							<div>
+								<h2>Restaurant</h2>
+							</div>
+
+							<!-- Accordions -->
+							<div class="accordion accordion-flush" id="accordionFlushExample">
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="flush-headingOne">
+										<button class="accordion-button collapsed" type="button"
+											data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+											aria-expanded="false" aria-controls="flush-collapseOne">
+											Staters
+										</button>
+									</h2>
+									<div id="flush-collapseOne" class="accordion-collapse collapse show"
+										aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+										<div class="accordion-body">
+											<!-- inner/nested Accordion -->
+											<div class="accordion accordion-flush" id="accordionFlushExample1">
+												<div class="accordion-item">
+													<h2 class="accordion-header" id="flush-headingInnerOne">
+														<button class="accordion-button collapsed" type="button"
+															data-bs-toggle="collapse"
+															data-bs-target="#flush-collapseInnerOne" aria-expanded="false"
+															aria-controls="flush-collapseInnerOne">
+															Veg-Staters
+														</button>
+													</h2>
+													<div id="flush-collapseInnerOne" class="accordion-collapse collapse"
+														aria-labelledby="flush-headingInnerOne"
+														data-bs-parent="#accordionFlushExample1">
+														<div>
+															Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum quasi nihil consectetur eligendi ipsa officiis esse, eveniet nulla quas aspernatur, nesciunt ipsum ratione tenetur velit? Nostrum, iusto! Saepe, eveniet explicabo.
+														</div>
+													</div>
+												</div>
+												<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+												<!-- inner two -->
+												<div class="accordion-item">
+													<h2 class="accordion-header" id="flush-headingInnerTwo">
+														<button class="accordion-button collapsed" type="button"
+															data-bs-toggle="collapse"
+															data-bs-target="#flush-collapseInnerTwo" aria-expanded="false"
+															aria-controls="flush-collapseInnerTwo">
+															Non-veg-Saters
+														</button>
+													</h2>
+													<div id="flush-collapseInnerTwo" class="accordion-collapse collapse"
+														aria-labelledby="flush-headingInnerTwo"
+														data-bs-parent="#accordionFlushExample1">
+														<div class="accordion-body">Lorem ipsum dolor sit amet consectetur
+															adipisicing elit. Modi cum natus, obcaecati ea accusantium
+															laboriosam officia vero incidunt culpa aut?</div>
+													</div>
+												</div>
+											</div>
+											<!-- inner end -->
+										</div>
+									</div>
+								</div>
+								<!-- second-accordin -->
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="flush-headingTwo">
+										<button class="accordion-button collapsed" type="button"
+											data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+											aria-expanded="false" aria-controls="flush-collapseTwo">
+											Veg-item
+										</button>
+									</h2>
+									<div id="flush-collapseTwo" class="accordion-collapse collapse"
+										aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+										<div class="accordion-body">
+
+											<!-- inner/nested Accordion -->
+											<div class="accordion accordion-flush" id="VegItem">
+												<div class="accordion-item">
+													<h2 class="accordion-header" id="flush-headingVeg-Biryani-item">
+														<button class="accordion-button collapsed" type="button"
+															data-bs-toggle="collapse"
+															data-bs-target="#flush-collapseVeg-Biryani-item" aria-expanded="false"
+															aria-controls="flush-collapseVeg-Biryani-item">
+															Veg-Biryani-Items
+														</button>
+													</h2>
+													<div id="flush-collapseVeg-Biryani-item" class="accordion-collapse collapse"
+														aria-labelledby="flush-headingVeg-Biryani-item"
+														data-bs-parent="#VegItem">
+														<div class="accordion-body">Lorem ipsum dolor sit amet consectetur
+															adipisicing elit. Modi cum natus, obcaecati ea accusantium
+															laboriosam officia vero incidunt culpa aut?</div>
+													</div>
+												</div>
+												<!-- inner two -->
+												<div class="accordion-item">
+													<h2 class="accordion-header" id="flush-headingRices-Items">
+														<button class="accordion-button collapsed" type="button"
+															data-bs-toggle="collapse"
+															data-bs-target="#flush-collapseRices-Items" aria-expanded="false"
+															aria-controls="flush-collapseRices-Items">
+															Rices-Items
+														</button>
+													</h2>
+													<div id="flush-collapseRices-Items" class="accordion-collapse collapse"
+														aria-labelledby="flush-headingRices-Items"
+														data-bs-parent="#VegItem">
+														<div class="accordion-body">Lorem ipsum dolor sit amet consectetur
+															adipisicing elit. Modi cum natus, obcaecati ea accusantium
+															laboriosam officia vero incidunt culpa aut?</div>
+													</div>
+												</div>
+											</div>
+											<!-- inner end -->
+										</div>
+									</div>
+								</div>
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="flush-headingThree">
+										<button class="accordion-button collapsed" type="button"
+											data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+											aria-expanded="false" aria-controls="flush-collapseThree">
+											Non-Veg
+										</button>
+									</h2>
+									<div id="flush-collapseThree" class="accordion-collapse collapse"
+										aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+										<div class="accordion-body">
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae pariatur
+											dolores totam. Totam veniam odit eaque eveniet architecto? Animi, quam!
+										</div>
+									</div>
+								</div>
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="flush-headingVegetables">
+										<button class="accordion-button collapsed" type="button"
+											data-bs-toggle="collapse" data-bs-target="#flush-collapseVegetables"
+											aria-expanded="false" aria-controls="flush-collapseVegetables">
+											Vegetables
+										</button>
+									</h2>
+									<div id="flush-collapseVegetables" class="accordion-collapse collapse"
+										aria-labelledby="flush-headingVegetables"
+										data-bs-parent="#accordionFlushExample">
+										<div class="accordion-body">
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam corporis
+											ipsum saepe. Ab minus expedita itaque adipisci natus velit ducimus.
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</section>
+</div>
+

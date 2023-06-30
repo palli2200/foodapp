@@ -1,0 +1,29 @@
+
+.scrollable{
+    height: 400px;
+    overflow: scroll;
+}
+
+
+.table.sticky th{
+  position: sticky;
+  top: 0;
+  background-color: black;
+}
+
+.driverHead{
+  // opacity: 5;
+  z-index: 5;
+}
+
+
+// .tableFixHead {
+//     overflow-y: auto;
+//     height: 400px;
+    
+//   }
+//   .tableFixHead thead th{
+//     position: sticky;
+//     top: 0;
+//     background-color: black;
+//   }

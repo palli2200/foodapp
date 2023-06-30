@@ -1,0 +1,15 @@
+[
+    {"id":1, "itemType":"Biryani", "status":"delivered"},
+    {"id":2, "itemType":"Rice", "status":"pickUp"},
+    {"id":3, "itemType":"kirana", "status":"delivered"},
+    {"id":4, "itemType":"vegitables", "status":"delivered"},
+    {"id":5, "itemType":"Biryani", "status":"pickUp"},
+    {"id":6, "itemType":"Rice", "status":"delivered"},
+    {"id":7, "itemType":"kirana", "status":"pickUp"},
+    {"id":5, "itemType":"Biryani", "status":"pickUp"},
+    {"id":6, "itemType":"Rice", "status":"delivered"},
+    {"id":7, "itemType":"kirana", "status":"pickUp"},
+    {"id":5, "itemType":"Biryani", "status":"pickUp"},
+    {"id":6, "itemType":"Rice", "status":"delivered"},
+    {"id":7, "itemType":"kirana", "status":"pickUp"}
+  ]
